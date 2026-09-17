@@ -98,6 +98,19 @@ The principal set-learning experiments use PyTorch directly. PyTorch
 Geometric is additionally required for the complementary GATv2 and GCN
 experiments.
 
+### Feature-extraction environment
+
+The STEAD waveform preprocessing and feature-extraction stage was
+executed under the following environment:
+
+- Python 3.11.15
+- h5py 3.16.0
+- Windows 64-bit
+- Anaconda/Miniconda environment
+
+The subsequent set-learning and graph-learning experiments were
+executed in the Linux/Colab environment reported below.
+
 ## Reproduction instructions
 
 Exact execution commands, configuration files, random seeds, and
