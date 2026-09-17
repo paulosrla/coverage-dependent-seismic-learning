@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated manuscript."
+title: "Coverage-Dependent Relational Learning for Multi-Station Earthquake Magnitude Estimation"
+type: software
+authors:
+  - family-names: "Almeida"
+    given-names: "Paulo R. L."
+license: MIT
+repository-code: "https://github.com/paulosrla/coverage-dependent-seismic-learning"
