@@ -1,5 +1,7 @@
 # Coverage-Dependent Relational Learning for Multi-Station Earthquake Magnitude Estimation
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22820001.svg)](https://doi.org/10.5281/zenodo.22820001)
+
 This repository contains the code, experiment configurations, processed
 results, and reproducibility material associated with the manuscript:
 
@@ -77,12 +79,13 @@ After preprocessing, the main experiment contains:
 
 The complete STEAD waveform archive is not redistributed in this
 repository. Instructions for obtaining the original data and reproducing
-the preprocessing workflow will be provided in
+the preprocessing workflow are provided in
 `docs/REPRODUCIBILITY.md`.
 
-A small example dataset will be provided in `data/sample/` so that the
-code and model interfaces can be tested without downloading the complete
-waveform archive.
+A small example dataset is provided in `data/sample/` for smoke testing
+the data-loading and preprocessing pipeline without downloading the
+complete waveform archive. The sample is not intended to reproduce the
+quantitative results reported in the manuscript.
 
 ## Repository structure
 
@@ -93,18 +96,20 @@ waveform archive.
 ├── requirements.txt
 ├── CITATION.cff
 ├── notebooks/
-│   └── Reproducible experiment notebooks
+│   ├── 01_set_models_and_coverage.ipynb
+│   └── 02_gnn_topology_comparison.ipynb
 ├── src/
-│   └── Reusable preprocessing, model, and evaluation code
-├── configs/
-│   └── Experiment configurations
+│   └── STEAD preprocessing and feature-extraction code
 ├── data/
+│   ├── README.md
+│   ├── metadata/
+│   │   └── full_stations.csv
 │   └── sample/
-│       └── Small example data for testing
+│       └── features_socal_sample.csv
 ├── results/
 │   └── Processed numerical results reported in the manuscript
 ├── figures/
-│   └── Reproducible manuscript figures
+│   └── Manuscript figures
 └── docs/
     ├── USER_GUIDE.md
     └── REPRODUCIBILITY.md
@@ -127,8 +132,9 @@ Activate the environment and install the dependencies:
 pip install -r requirements.txt
 ```
 
-Exact package versions used for the reproducibility release will be
-listed in `requirements.txt`.
+Exact package versions used for the reproducibility release are listed
+in `requirements.txt`. Additional computational-environment information
+is provided in `docs/REPRODUCIBILITY.md`.
 
 ## Reproducing the experiments
 
@@ -141,20 +147,19 @@ The reproducibility workflow consists of four main stages:
 4. reproduce the coverage-stratified statistical analyses, tables, and
    figures.
 
-Detailed instructions will be provided in:
+Detailed instructions are provided in:
 
 ```text
 docs/REPRODUCIBILITY.md
 ```
 
-The repository will also include processed result tables so that the
-statistical analyses and manuscript figures can be reproduced without
+The repository also includes processed result tables so that the
+statistical analyses and manuscript figures can be inspected without
 retraining all neural networks.
 
 ## Evaluation protocol
 
 The main set-based experiments use five common event-level folds.
-
 Feature standardization is performed independently within each fold.
 Scaling parameters are estimated exclusively from the training
 station-event observations and then applied to the corresponding
@@ -187,8 +192,9 @@ similarity. It does not use mutual information.
 No test or validation observations are used to estimate feature scaling
 parameters or training-derived graph topology.
 
-Random seeds and model hyperparameters used in the reported experiments
-will be included in the configuration files.
+Random seeds, model hyperparameters, and the computational environments
+used in the reported experiments are documented in the experiment
+notebooks and reproducibility documentation.
 
 ## Documentation
 
@@ -209,12 +215,15 @@ and is subject to its own terms and conditions.
 
 ## Citation
 
-Citation information for the associated manuscript will be provided in
-`CITATION.cff`.
+Citation metadata are provided in `CITATION.cff`.
+
+The archived reproducibility release is available on Zenodo:
+
+**DOI:** [10.5281/zenodo.22820001](https://doi.org/10.5281/zenodo.22820001)
 
 ## Status
 
-This repository is being prepared as the reproducibility archive for the
-associated manuscript. The public release submitted with the manuscript
-will contain the complete documented workflow required to reproduce the
-main reported results.
+Version **v1.0.1** is the archived reproducibility release associated
+with the initial manuscript submission. The release is permanently
+archived on Zenodo under DOI
+[10.5281/zenodo.22820001](https://doi.org/10.5281/zenodo.22820001).

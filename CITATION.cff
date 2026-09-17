@@ -7,3 +7,5 @@ authors:
     given-names: "Paulo R. L."
 license: MIT
 repository-code: "https://github.com/paulosrla/coverage-dependent-seismic-learning"
+version: 1.0.1
+doi: 10.5281/zenodo.22820001
